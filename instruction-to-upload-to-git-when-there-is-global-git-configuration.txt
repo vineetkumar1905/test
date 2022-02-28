@@ -1,6 +1,5 @@
 Instructions
-
-
+//git push https://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@github.com/vineetkumar1905/test.git
 //initalize git in the folder you want to push
 git init
 //git config username and email  locally for project that you want to upload
@@ -10,7 +9,14 @@ git config user.email "usermail"
 git add .
 //Add a message and commit files
 git commit -m "message"
-//push code on to the server using access token for reference follow the link below
+//push code on to the server using access token for reference follow the link below it directly pushes to code to git
 //https://techglimpse.com/git-push-github-token-based-passwordless/
 https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
-
+//or you can add it in config by using the syntax below.. it stores the path to push in git config file
+// git remote add origin https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
+//git remote -v
+# Verifies the new remote URL
+//then you can use the below command to push code to github
+//git push origin
+//in case to push a branch you can use the command below,just replace the name of the your branch with testbranch
+// git push --set-upstream origin testbranch
