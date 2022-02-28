@@ -20,4 +20,4 @@ https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
 //git push origin
 //in case to push a branch you can use the command below,just replace the name of the your branch with testbranch
 // git push --set-upstream origin testbranch
-//once you have pushed your branch you can simply use git push origin next time to push the code to that branch
+//once you have pushed your branch you can simply use git push origin next time to push the code to that branch and it may need you to login your github account
