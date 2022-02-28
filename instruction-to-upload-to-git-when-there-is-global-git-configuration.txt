@@ -1,3 +1,6 @@
+Instructions
+
+
 //initalize git in the folder you want to push
 git init
 //git config username and email  locally for project that you want to upload
@@ -10,3 +13,4 @@ git commit -m "message"
 //push code on to the server using access token for reference follow the link below
 //https://techglimpse.com/git-push-github-token-based-passwordless/
 https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
+
