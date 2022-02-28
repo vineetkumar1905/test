@@ -1,0 +1,12 @@
+//initalize git in the folder you want to push
+git init
+//git config username and email  locally for project that you want to upload
+git config user.name "username"
+git config user.email "usermail"
+//Add all files using  .
+git add .
+//Add a message and commit files
+git commit -m "message"
+//push code on to the server using access token for reference follow the link below
+//https://techglimpse.com/git-push-github-token-based-passwordless/
+https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git
