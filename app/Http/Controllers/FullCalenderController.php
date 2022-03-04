@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\DB;
   
 class FullCalenderController extends Controller
 {
@@ -16,10 +17,13 @@ class FullCalenderController extends Controller
     {
   
         if($request->ajax()) {
-       
-             $data = Event::whereDate('start', '>=', $request->start)
+            $data = DB::table('events')->whereDate('start', '>=', $request->start)
                        ->whereDate('end',   '<=', $request->end)
                        ->get(['id', 'title', 'start', 'end']);
+
+             // $data = Event::whereDate('start', '>=', $request->start)
+             //           ->whereDate('end',   '<=', $request->end)
+             //           ->get(['id', 'title', 'start', 'end']);
   
              return response()->json($data);
         }
@@ -37,7 +41,8 @@ class FullCalenderController extends Controller
  
         switch ($request->type) {
            case 'add':
-              $event = Event::create([
+           $event = DB::table('events')->insert([          
+              //$event = Event::create([
                   'title' => $request->title,
                   'start' => $request->start,
                   'end' => $request->end,
@@ -45,9 +50,22 @@ class FullCalenderController extends Controller
  
               return response()->json($event);
              break;
-  
-           case 'update':
+
+            case 'update':
+            //print_r($request->all());
+            //$event = DB::table('events')->where('id',$request->id)->update([          
               $event = Event::find($request->id)->update([
+                  'title' => $request->title,
+                  'start' => $request->start,
+                  'end' => $request->end,
+              ]);
+            //print_r($event); 
+              return response()->json($event);
+             break;
+  
+           case 'move':
+           $event = DB::table('events')->where('id',$request->id)->update([ 
+              //$event = Event::find($request->id)->update([
                   'title' => $request->title,
                   'start' => $request->start,
                   'end' => $request->end,
@@ -57,8 +75,8 @@ class FullCalenderController extends Controller
              break;
   
            case 'delete':
-              $event = Event::find($request->id)->delete();
-  
+           $event = DB::table('events')->where('id',$request->id)->delete(); 
+             // $event = Event::find($request->id)->delete();  
               return response()->json($event);
              break;
              

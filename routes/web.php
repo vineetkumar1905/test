@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\FullCalenderController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\UserController;
+
   
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +20,5 @@ use App\Http\Controllers\FullCalenderController;
   
 Route::get('fullcalender', [FullCalenderController::class, 'index']);
 Route::post('fullcalenderAjax', [FullCalenderController::class, 'ajax']);
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('users', [UserController::class,'index' ]);
