@@ -1,0 +1,3 @@
+		 document.getElementById("yes").disabled = true;
+		 document.getElementById("yes").disabled = false;
+		 https://mrrio.github.io/jsPDF/examples/basic.html
