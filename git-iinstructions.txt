@@ -67,3 +67,5 @@ After pushing the branch you can simply make changes and then add files and comm
 git push
 --------
 this will push changes to the branch on git. for pushing data on local and git branch should be in sync
+
+//merging branches
