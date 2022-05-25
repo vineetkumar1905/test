@@ -66,10 +66,27 @@ After pushing the branch you can simply make changes and then add files and comm
 --------
 git push
 --------
-<<<<<<< HEAD
-this will push changes to the branch on git. for pushing data on local and git branch should be in sync
-=======
-this will push changes to the branch on git. for pushing data on local and git branch should be in sync
 
-//merging branches
->>>>>>> instructions
+//to delete branch or remote git
+git push origin -d <branchname>
+
+//To merge branch into main or master make sure to take its pull in the local branch
+--------------------------------
+git pull origin <branchname>
+--------------------------------
+// and then make changes and push it to remote repo.
+ -------------------------------
+ git add . or git add <filename>
+ ------------------------------- 
+// and commit using
+ -------------------------------
+git commit -m <message>
+ -------------------------------
+//switch to branch you want to merge into 
+-------------------------
+git checkout <branchname>
+--------------------------
+//then use 
+---------------------------------------
+git merge <branch to copy changes from>
+--------------------------------------- 
